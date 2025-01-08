@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -65,6 +66,19 @@ public class DialogContent {
 
 
     }
+
+
+    public void verifyContainsText(WebElement elementm,String text) {
+
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.textToBePresentInElement(elementm, text));
+
+
+        Assert.assertTrue(elementm.getText().contains(text));
+    }
+
+
+
 
 
 

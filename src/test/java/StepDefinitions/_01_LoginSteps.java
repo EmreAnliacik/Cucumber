@@ -42,11 +42,7 @@ public class _01_LoginSteps {
     @Then("User should login successfully")
     public void user_should_login_successfully() {
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.assertLogin,"Student"));
-
-
-        Assert.assertTrue(dc.assertLogin.getText().contains("Student"));
+       dc.verifyContainsText(dc.assertLogin,"Student");
 
     }
 
