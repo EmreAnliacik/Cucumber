@@ -34,21 +34,21 @@ public class DialogContent extends Parent {
     public WebElement assertLogin;
 
 
-    @FindBy(css = "")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addButton;
 
 
-    @FindBy(css = "")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     public WebElement nameInput;
 
-    @FindBy(css = "")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
-    @FindBy(css = "")
+    @FindBy(css = "ms-save-button button")
     public WebElement saveButton;
 
-    @FindBy(css = "")
-    public WebElement successMessage.
+    @FindBy(xpath = "//div[contains(text(),'succesfully')]")
+    public WebElement successMessage;
 
 
 

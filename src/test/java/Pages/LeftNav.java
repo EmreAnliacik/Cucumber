@@ -13,14 +13,14 @@ public class LeftNav extends Parent {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    @FindBy(css = "")
+    @FindBy(xpath = "(//span[text()='Setup'])[1]")
     public WebElement setup;
 
-    @FindBy(css = "")
+    @FindBy(xpath = "(//span[text()='Parameters'])[1]")
     public WebElement parameters;
 
 
-    @FindBy(css = "")
+    @FindBy(xpath = "(//span[text()='Countries'])[1]")
     public WebElement country;
 
 
