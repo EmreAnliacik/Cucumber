@@ -40,4 +40,14 @@ public class _02_CountrySteps {
     }
 
 
+    @When("Cretae a country name as {string} code as {string}")
+    public void cretaeACountryNameAsCodeAs(String name, String code) {
+
+
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,name);
+        dc.mySendKeys(dc.codeInput,code);
+        dc.myClick(dc.saveButton);
+
+    }
 }
