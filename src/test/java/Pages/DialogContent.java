@@ -34,6 +34,26 @@ public class DialogContent extends Parent {
     public WebElement assertLogin;
 
 
+    @FindBy(css = "")
+    public WebElement addButton;
+
+
+    @FindBy(css = "")
+    public WebElement nameInput;
+
+    @FindBy(css = "")
+    public WebElement codeInput;
+
+    @FindBy(css = "")
+    public WebElement saveButton;
+
+    @FindBy(css = "")
+    public WebElement successMessage.
+
+
+
+
+
 
 
 

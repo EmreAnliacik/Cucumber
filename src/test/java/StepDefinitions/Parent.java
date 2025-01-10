@@ -11,24 +11,21 @@ import java.time.Duration;
 
 public class Parent {
 
-    public void myClick(WebElement element){
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+    public void myClick(WebElement element) {
+
         wait.until(ExpectedConditions.elementToBeClickable(element));
-
         //scroll yap
         scrollToElement(element);
-
         element.click();
 
     }
 
 
-    public void mySendKeys(WebElement element,String text){
+    public void mySendKeys(WebElement element, String text) {
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
-
         //scroll yap
         scrollToElement(element);
         element.clear();
@@ -36,24 +33,20 @@ public class Parent {
 
     }
 
-    public void scrollToElement(WebElement element){
+    public void scrollToElement(WebElement element) {
 
-        JavascriptExecutor js = (JavascriptExecutor)GWD.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
 
 
     }
 
 
-    public void verifyContainsText(WebElement elementm,String text) {
+    public void verifyContainsText(WebElement elementm, String text) {
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.textToBePresentInElement(elementm, text));
-
-
         Assert.assertTrue(elementm.getText().contains(text));
     }
-
 
 
 }
