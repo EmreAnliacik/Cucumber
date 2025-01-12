@@ -1,9 +1,14 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 public class DialogContent extends Parent {
 
@@ -45,6 +50,18 @@ public class DialogContent extends Parent {
 
     @FindBy(css = "[formcontrolname='shortName'] input")
     public WebElement shortName;
+
+    @FindBy(tagName = "mat-panel-description")
+    public WebElement messageBox;
+
+
+    public void verifyMessageContainsText(String value,WebElement  element){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
+        Assert.assertTrue( element.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+
+        //sayfaya ESC tuşu gönderildi, açık mesaj kalmasın diye
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+    }
 
 
 

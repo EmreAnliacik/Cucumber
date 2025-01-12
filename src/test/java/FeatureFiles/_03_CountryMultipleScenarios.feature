@@ -13,3 +13,5 @@ Feature: Counrty Multi Scenario
     Scenario: Create country 2
       When Cretae a country name as "emr345" code as "k33"
       Then Success message should be displayed
+
+
