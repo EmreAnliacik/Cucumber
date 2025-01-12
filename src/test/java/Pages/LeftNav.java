@@ -1,6 +1,5 @@
 package Pages;
 
-import StepDefinitions.Parent;
 import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +21,9 @@ public class LeftNav extends Parent {
 
     @FindBy(xpath = "(//span[text()='Countries'])[1]")
     public WebElement country;
+
+    @FindBy(xpath = "(//span[text()='Citizenships'])[1]")
+    public WebElement citizenship;
 
 
 

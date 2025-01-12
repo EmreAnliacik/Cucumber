@@ -1,4 +1,4 @@
-package StepDefinitions;
+package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
