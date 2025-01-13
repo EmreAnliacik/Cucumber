@@ -33,21 +33,46 @@ public class _04_CitizenshipSteps {
 
     }
 
-    @When("Create a citizensip name as {string} shortName as {string}")
-    public void createACitizensipNameAsShortNameAs(String name, String shortName) {
-        dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.nameInput,name);
-        dc.mySendKeys(dc.shortName,shortName);
-        dc.myClick(dc.saveButton);
-
-
-
-    }
+//    @When("Create a citizensip name as {string} shortName as {string}")
+//    public void createACitizensipNameAsShortNameAs(String name, String shortName) {
+//        dc.myClick(dc.addButton);
+//        dc.mySendKeys(dc.nameInput,name);
+//        dc.mySendKeys(dc.shortName,shortName);
+//        dc.myClick(dc.saveButton);
+//
+//
+//
+//    }
 
     @Then("Already exist message should be displayed")
     public void alreadyExistMessageShouldBeDisplayed() {
 
         dc.verifyMessageContainsText("already",dc.messageBox);
+        dc.myClick(dc.closeDialog);
+
+
+    }
+
+    @When("Create a citizenship name as {string} shortName as {string}")
+    public void createACitizenshipNameAsShortNameAs(String arg0, String arg1) {
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,arg0);
+        dc.mySendKeys(dc.shortName,arg1);
+        dc.myClick(dc.saveButton);
+
+    }
+
+
+
+    @When("Delete a citizenship name as {string} shortName as {string}")
+    public void deleteACitizenshipNameAsShortNameAs(String name, String shortName) {
+
+//        dc.mySendKeys(dc.searchInput,name);
+//        dc.myClick(dc.searchButton);
+//        dc.myClick(dc.deleteButton);
+//        dc.myClick(dc.submitButton);
+        dc.deleteItem(name);
+
 
 
     }

@@ -54,13 +54,43 @@ public class DialogContent extends Parent {
     @FindBy(tagName = "mat-panel-description")
     public WebElement messageBox;
 
+    @FindBy(css = "button[aria-label='Close']")
+    public WebElement messageBoxClose;
+
+    @FindBy(xpath = "//ms-text-field/input[@placeholder='Name']")
+    public WebElement searchInput;
+
+    @FindBy(css = "ms-search-button button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//ms-delete-button/button")
+    public WebElement deleteButton;
+
+    @FindBy(css = "button[type='submit']")
+    public WebElement submitButton;
+
+    @FindBy(css = "button[aria-label='Close dialog']")
+    public WebElement closeDialog;
+
 
     public void verifyMessageContainsText(String value,WebElement  element){
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"),0));
         Assert.assertTrue( element.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
 
         //sayfaya ESC tuşu gönderildi, açık mesaj kalmasın diye
-        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+//        new Actions(GWD.getDriver()).click(messageBoxClose).build().perform();
+        wait.until(ExpectedConditions.numberOfElementsToBeLessThan(By.xpath("//hot-toast-container/div/div/div//*"),1));
+    }
+
+    public void deleteItem(String name){
+        mySendKeys(searchInput,name);
+        myClick(searchButton);
+        //Stale element hatasinin cozumu icin searhin yeniden clickable olmasini bekleriz bu sayede sayfa yenilenmis olur
+        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+        myClick(deleteButton);
+        myClick(submitButton);
+
+
     }
 
 
