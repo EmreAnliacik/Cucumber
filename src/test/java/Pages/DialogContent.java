@@ -86,7 +86,12 @@ public class DialogContent extends Parent {
         mySendKeys(searchInput,name);
         myClick(searchButton);
         //Stale element hatasinin cozumu icin searhin yeniden clickable olmasini bekleriz bu sayede sayfa yenilenmis olur
-        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+//        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+
+        //2. Yontem:sayfanin kendi waitini ,loading barini yakalayalim(en saglam yontem)
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//app/*"),1));
+
+
         myClick(deleteButton);
         myClick(submitButton);
 
