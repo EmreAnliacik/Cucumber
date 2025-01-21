@@ -26,6 +26,19 @@ public class LeftNav extends Parent {
     public WebElement citizenship;
 
 
+    public WebElement getWebElement(String strLink){
+        switch (strLink){
+            case "setup" : return this.setup;
+            case "parameters" : return this.parameters;
+            case "country" : return this.country;
+            case "citizenship" : return this.citizenship;
+
+        }
+        return null;
+
+
+    }
+
 
 
 
