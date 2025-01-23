@@ -2,8 +2,10 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.LeftNav;
+import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import org.openqa.selenium.Keys;
 
 import java.util.List;
 
@@ -32,9 +34,8 @@ public class _08_DataTableSteps {
         for (int i = 0; i < stringList.size(); i++) {
 
             dc.myClick(dc.getWebElemenet(stringList.get(i)));
-
-
         }
+
 
 
 
@@ -46,10 +47,24 @@ public class _08_DataTableSteps {
         List<List<String>> strLinks = links.asLists(String.class);
 
         for (int i = 0; i < strLinks.size(); i++) {
-            dc.mySendKeys(dc.getWebElemenet(strLinks.get(i).get(0)), strLinks.get(i).get(1));
+            dc.mySendKeys(dc.getWebElemenet(strLinks.get(i).get(0)), strLinks.get(i).get(1) + Keys.ENTER);
 
 
 
+        }
+
+
+    }
+
+    @And("User delete item from Dialog Content")
+    public void userDeleteItemFromDialogContent(DataTable links) {
+        List<String> stringList = links.asList(String.class);
+
+        GWD.getDriver().navigate().refresh();
+
+        for (int i = 0; i < stringList.size(); i++) {
+
+            dc.deleteItem(stringList.get(i));
         }
 
 

@@ -12,15 +12,37 @@ Feature: DataTable Functionality
 
      And Click on the element in Dialog
        | addButton |
-#
+
      And User sending the keys in Dialog
-       | nameInput  | newreeee |
-       | codeInput  | ew346      |
-#
-#     And Click on the element in Dialog
-#       | saveButton |
-#
-#     Then Success message should be displayed
-#
-#     And User delete item from Dialog Content
-#       | newreeee |
+       | nameInput  | birikiiDi|
+       | codeInput  | 143255      |
+
+     And Click on the element in Dialog
+       | saveButton |
+
+     Then Success message should be displayed
+
+     And User delete item from Dialog Content
+       | birikiiDi |
+
+
+
+
+     Then Success message should be displayed
+
+    Scenario: Create Nationality
+      And Click on the element in LeftNav
+        | setup      |
+        | parameters |
+        | nationalities |
+
+      And Click on the element in Dialog
+      | addButton |
+
+      And User sending the keys in Dialog
+      |nameInput|SaweeeGdish|
+
+      And Click on the element in Dialog
+      |saveButton|
+
+      And Success message should be displayed

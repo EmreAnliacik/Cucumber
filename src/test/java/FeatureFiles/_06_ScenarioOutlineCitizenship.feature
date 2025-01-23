@@ -20,7 +20,7 @@ Feature: Citizenship Outline Scenario
 
     Examples:
       | name     | shortName |
-      | 1tekdszxxzndosAdadadddDSDSDBBkddssadsa5 | 11fdfkddsSDDfFddrvreaCXVssska5      |
-      | 2teksanxdaadvfsdAxZDSsdsfdasaddoddfsfsdka6 | 22kkfcgdadadaxfdfsdfdasWEfa6      |
+      | 1tekdszxxzndosAdadadddDSDSDBBkdczxdssadsa5 | 11fdfkddsdaSDDfFddrvreaCXVssska5      |
+      | 2teksanxdaadvfsdAxZDSsdasdsfdasaddoddfsfsdka6 | 22kkfdacgdadadaxfdfsdfdasWEfa6      |
 #      | 3tedcdadssddXZADasdkndsfoka7 | 33kffdgrsvdxzddcvaCXka7      |
   #    | 4teknsadfdadaerdxzagoxcbka8 | 44kfwedfd32cxQgka8      |

@@ -58,7 +58,10 @@ public class DialogContent extends Parent {
     public WebElement messageBoxClose;
 
     @FindBy(xpath = "//ms-text-field/input[@placeholder='Name']")
-    public WebElement searchInput;
+    public WebElement searchInputName;
+
+    @FindBy(xpath = "//ms-text-field/input[@placeholder='Code']")
+    public WebElement searchInputCode;
 
     @FindBy(css = "ms-search-button button")
     public WebElement searchButton;
@@ -83,26 +86,50 @@ public class DialogContent extends Parent {
     }
 
     public void deleteItem(String name){
-        mySendKeys(searchInput,name);
+        mySendKeys(searchInputName,name);
         myClick(searchButton);
         //Stale element hatasinin cozumu icin searhin yeniden clickable olmasini bekleriz bu sayede sayfa yenilenmis olur
 //        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
         //2. Yontem:sayfanin kendi waitini ,loading barini yakalayalim(en saglam yontem)
-        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//app/*"),1));
+//        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//app/*"),1));
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
 
 
         myClick(deleteButton);
+//        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
         myClick(submitButton);
 
 
     }
+
+
+//    public void deleteItemNew(String name,String code){
+//        mySendKeys(searchInputName,name);
+//        mySendKeys(searchInputCode,code);
+//        myClick(searchButton);
+//        //Stale element hatasinin cozumu icin searhin yeniden clickable olmasini bekleriz bu sayede sayfa yenilenmis olur
+////        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+//
+//        //2. Yontem:sayfanin kendi waitini ,loading barini yakalayalim(en saglam yontem)
+////        wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//app/*"),1));
+//        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+//
+//
+//        myClick(deleteButton);
+////        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
+//        myClick(submitButton);
+//
+//
+//    }
+
 
     public WebElement getWebElemenet(String strLink){
         switch (strLink){
             case "addButton" : return this.addButton;
             case "nameInput" : return this.nameInput;
             case "codeInput" : return this.codeInput;
+            case "saveButton" : return this.saveButton;
         }
         return null;
 

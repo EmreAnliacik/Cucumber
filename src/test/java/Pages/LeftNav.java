@@ -25,6 +25,9 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Citizenships'])[1]")
     public WebElement citizenship;
 
+    @FindBy(xpath = "(//span[text()='Nationalities'])[1]")
+    public WebElement nationalities;
+
 
     public WebElement getWebElement(String strLink){
         switch (strLink){
@@ -32,6 +35,7 @@ public class LeftNav extends Parent {
             case "parameters" : return this.parameters;
             case "country" : return this.country;
             case "citizenship" : return this.citizenship;
+            case "nationalities" : return this.nationalities;
 
         }
         return null;
