@@ -10,17 +10,17 @@ Feature: DataTable Functionality
       | parameters |
       | country  |
 
-#      And Click on the element in Dialog
-#       | addButton |
+     And Click on the element in Dialog
+       | addButton |
 #
-#      And User sending the keys in Dialog
-#       | nameInput  | newreeee |
-#       | codeInput  | ew346      |
+     And User sending the keys in Dialog
+       | nameInput  | newreeee |
+       | codeInput  | ew346      |
 #
-#      And Click on the element in Dialog
+#     And Click on the element in Dialog
 #       | saveButton |
 #
-#      Then Success message should be displayed
+#     Then Success message should be displayed
 #
-#      And User delete item from Dialog Content
+#     And User delete item from Dialog Content
 #       | newreeee |

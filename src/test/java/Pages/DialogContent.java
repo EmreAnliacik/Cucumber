@@ -98,6 +98,16 @@ public class DialogContent extends Parent {
 
     }
 
+    public WebElement getWebElemenet(String strLink){
+        switch (strLink){
+            case "addButton" : return this.addButton;
+            case "nameInput" : return this.nameInput;
+            case "codeInput" : return this.codeInput;
+        }
+        return null;
+
+    }
+
 
 
 
