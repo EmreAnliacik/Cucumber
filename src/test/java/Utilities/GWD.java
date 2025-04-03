@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Locale;
 
 public class GWD {
 
@@ -14,6 +15,10 @@ public class GWD {
 
 
     public static WebDriver getDriver() {
+
+        //extend report türkçe bilg çalışmaması sebebiyle kondu
+        Locale.setDefault(new Locale("EN"));
+        System.setProperty("user.language", "EN");
 
        if (driver==null) {
            driver = new ChromeDriver();

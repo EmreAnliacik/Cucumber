@@ -42,8 +42,17 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    public WebElement integrationCodeInput;
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    public WebElement priority;
+
     @FindBy(css = "ms-save-button button")
     public WebElement saveButton;
+
+    @FindBy(xpath = "//ms-save-button[@caption='GENERAL.BUTTON.SAVE_AND_CLOSE']")
+    public WebElement saveAndCloseButton;
 
     @FindBy(xpath = "//div[contains(text(),'succesfully')]")
     public WebElement successMessage;
@@ -130,6 +139,9 @@ public class DialogContent extends Parent {
             case "nameInput" : return this.nameInput;
             case "codeInput" : return this.codeInput;
             case "saveButton" : return this.saveButton;
+            case "integrationCode" : return this.integrationCodeInput;
+            case "priority" : return this.priority;
+            case "saveAdCloseButton" : return this.saveAndCloseButton;
         }
         return null;
 
