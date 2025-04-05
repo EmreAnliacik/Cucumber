@@ -27,11 +27,11 @@ public class _03_ApachePOIStart {
 
 
         //istenen satiri aliyorum
-        Row satir = calismaSayfasi.getRow(0);
+        Row satir = calismaSayfasi.getRow(0); //0. satiri aldim
 
 
         //istenilen hucreyi aliyorum
-        Cell hucre = satir.getCell(0);
+        Cell hucre = satir.getCell(0); //0. sutundaki hucreyi aldim
 
         System.out.println("Hucre: "+hucre);
 

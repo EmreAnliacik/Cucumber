@@ -20,7 +20,7 @@ public class _04_ApachePOIGetAllData {
         int rowCount = sheet.getPhysicalNumberOfRows();
 
 
-        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) { // satir sayisi
             //Simdi burada her bir satirin kac hucresi var onu bulana kadar
             //hucreleri alacagim
 //            Row row = sheet.getRow(i);
