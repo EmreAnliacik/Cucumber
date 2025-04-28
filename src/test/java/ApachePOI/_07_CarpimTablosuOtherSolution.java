@@ -15,7 +15,7 @@ public class _07_CarpimTablosuOtherSolution {
         Workbook workbook = WorkbookFactory.create(fileInputStream);
         Sheet sheet = workbook.getSheetAt(0);
 
-        int yeniAcilacakSatir = sheet.getPhysicalNumberOfRows();
+        int yeniAcilacakSatir = 0; // sheet.getPhysicalNumberOfRows();
 
         for (int k = 1; k <= 10 ; k++) {
 
