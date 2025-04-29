@@ -1,5 +1,10 @@
 package _JDBC.Gun01;
 
-public class Ogr1 {
+import _JDBC.JDBCParent;
+
+public class Ogr1 extends JDBCParent {
+
+
+
 
 }

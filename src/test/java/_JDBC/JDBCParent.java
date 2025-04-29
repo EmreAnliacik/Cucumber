@@ -12,6 +12,9 @@ import java.sql.Statement;
 public class JDBCParent {
     public Connection baglanti;
 
+    public Statement sorguEkrani;
+
+
     @BeforeClass
     public void DBConnectionOpen() throws SQLException {
         //        bir sorgunun çalışması için yapılanlar
@@ -27,7 +30,7 @@ public class JDBCParent {
 
 
 //        3- Sorgu ekranını açtık
-        Statement sorguEkrani = baglanti.createStatement();
+        sorguEkrani = baglanti.createStatement();
     }
 
     @AfterClass
